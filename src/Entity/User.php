@@ -43,11 +43,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $bootcamp;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $email;
 
     public function getId(): ?int
@@ -128,18 +123,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setImage(?string $image): self
     {
         $this->image = $image;
-
-        return $this;
-    }
-
-    public function getBootcamp(): ?string
-    {
-        return $this->bootcamp;
-    }
-
-    public function setBootcamp(string $bootcamp): self
-    {
-        $this->bootcamp = $bootcamp;
 
         return $this;
     }

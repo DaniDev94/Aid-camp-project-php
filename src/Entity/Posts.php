@@ -28,7 +28,7 @@ class Posts
     private $introduction;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $date;
 
@@ -36,6 +36,11 @@ class Posts
      * @ORM\Column(type="text")
      */
     private $description;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $bootcamp;
 
     public function getId(): ?int
     {
@@ -86,6 +91,18 @@ class Posts
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getBootcamp(): ?string
+    {
+        return $this->bootcamp;
+    }
+
+    public function setBootcamp(string $bootcamp): self
+    {
+        $this->bootcamp = $bootcamp;
 
         return $this;
     }
