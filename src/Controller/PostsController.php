@@ -42,4 +42,15 @@ class PostsController extends AbstractController
         return $this->render("PostsPage/pages/formNewPost.html.twig", ["postsForm" => $form->createView()]);
                 
     }
+
+    /**
+     * @Route("/deleteposts/{id}", name="deletePosts")
+     */
+    public function deletePosts(Posts $posts, EntityManagerInterface $doctrine )
+    {
+        $doctrine->remove($posts);
+        $doctrine->flush();
+
+        return $this->redirectToRoute("getPosts");
+    }
 }
