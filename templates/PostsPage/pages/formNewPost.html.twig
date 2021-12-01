@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+<h1>Crear Post</h1>
+
+{{ form_start(postsForm) }}
+{{ form_row(postsForm.title, {
+label: 'Titulo'
+}) }}
+{{ form_row(postsForm.introduction, {
+label: 'Introducción'
+}) }}
+{{ form_row(postsForm.bootcamp, {
+label: 'Bootcamp'
+}) }}
+{{ form_row(postsForm.description, {
+label: 'Descripción'
+}) }}
+<button type="submit" class="btn">Register</button>
+{{ form_end(postsForm) }}
+{% endblock %}

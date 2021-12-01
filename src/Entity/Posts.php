@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\PostsRepository;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -41,6 +42,17 @@ class Posts
      * @ORM\Column(type="string", length=255)
      */
     private $bootcamp;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="posts")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
+
+    public function __construct()
+    {
+        $this->date = new DateTime();
+    }
 
     public function getId(): ?int
     {
@@ -106,4 +118,17 @@ class Posts
 
         return $this;
     }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
 }
