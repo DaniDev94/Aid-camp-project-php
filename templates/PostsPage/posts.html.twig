@@ -2,9 +2,15 @@
 
 {% block body %}
 <h1>Posts Page</h1>
+<a href="{{path ('newPost')}}">Crear Post</a>
+<a href="{{path ('app_logout')}}">Cerrar sesion</a>
+
 {% for post in posts %}
 <h2>{{post.title|upper}}</h2>
 <h2>{{post.date|date("Y-m-d H:i:s")}}</h2>
+{% if is_granted('ROLE_ADMIN') %}
+<a href="{{ path('deletePosts', {'id': post.id}) }}">Borrar</a>
+{% endif %}
 
 {% endfor %}
 
