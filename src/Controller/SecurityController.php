@@ -40,13 +40,24 @@ class SecurityController extends AbstractController
     }
 
 
-    public function loginAdmin(UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager){
+    public function loginAdmin(UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager)
+    {
         $admin = new User();
         $admin->setName("admin");
         $admin->setRoles(['ROLE_ADMIN']);
-        $admin->setPassword($userPasswordHasher->hashPassword($admin,"aidcamp10794"));
+        $admin->setPassword($userPasswordHasher->hashPassword($admin, "aidcamp10794"));
 
         $entityManager->persist($admin);
         $entityManager->flush();
     }
+
+    public function accountInfo(): Response
+    {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_REMEMBERED');
+    }
+
+    public function resetPassword(): Response
+{
+    $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+}
 }
