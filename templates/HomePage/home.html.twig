@@ -1,10 +1,29 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
+<html class="b-html-home">
 
-<h1>Home Page</h1>
-<img src="{{asset('build/images/landing-aid-camp.jpg')}}"
+<body class="b-body-home">
+    <div class="b-content-hero">
+        <h1 class="b-content-hero__title">Aid Camp</h1>
+        <h2 class="b-content-hero__text">Comparte contenido, experiencias, consejos y mejoras dentro o fuera del
+            Bootcamp</h2>
+    </div>
 
-<a href="{{path ('app_login')}}">Entrar</a>
+    <div class="b-content-subhero">
+        <div class="b-content-txt">
+            <h3 class="b-content-txt__text">Aid camp es un punto de encuentro, un lugar donde colaborar en equipo y
+                poder crecer unidos en una
+                comunidad de estudiantes repleta de diversidad.
+            </h3>
+            <h3 class="b-content-txt__text">Bienvenidos a Aid camp, tu futuro nunca estuvo tan cerca.</h3>
+        </div>
+        <div class="b-content-btn">
+            <a style="text-decoration:none" class="b-content-btn__button" href="{{path ('app_login')}}">Comenzar</a>
+        </div>
+    </div>
+</body>
+
+</html>
 
 {% endblock %}
