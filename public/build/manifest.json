@@ -1,0 +1,12 @@
+{
+  "build/app.css": "/build/app.css",
+  "build/app.js": "/build/app.js",
+  "build/runtime.js": "/build/runtime.js",
+  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-7db861.js": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_ob-7db861.js",
+  "build/images/register.jpg": "/build/images/register.7df8ea86.jpg",
+  "build/images/sub-hero.jpg": "/build/images/sub-hero.a961c39a.jpg",
+  "build/images/landing-aid-camp.jpg": "/build/images/landing-aid-camp.2b6cc90d.jpg",
+  "build/fonts/Kanit-Bold.ttf": "/build/fonts/Kanit-Bold.15483ed7.ttf",
+  "build/fonts/Kanit-Medium.ttf": "/build/fonts/Kanit-Medium.dd669b98.ttf",
+  "build/fonts/Kanit-Light.ttf": "/build/fonts/Kanit-Light.68ccb9c4.ttf"
+}
