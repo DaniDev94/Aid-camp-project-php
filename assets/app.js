@@ -11,5 +11,6 @@ import './styles/normalize.scss';
 import './styles/fonts.scss';
 import './styles/colors.scss';
 
+
 // start the Stimulus application
 import './bootstrap';

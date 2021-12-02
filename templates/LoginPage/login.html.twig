@@ -2,41 +2,57 @@
 
 
 {% block body %}
-<form method="post">
-    {% if error %}
-    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
 
-    {% if app.user %}
-    <div class="mb-3">
-        You are logged in as {{ app.user.name }}, <a href="{{ path('app_logout') }}">Logout</a>
-    </div>
-    {% endif %}
-
-    <h1 class="h3 mb-3 font-weight-normal">Iniciar Sesión</h1>
-    <label for="inputName">Name</label>
-    <input type="text" value="{{ last_username }}" name="name" id="inputName" class="form-control"
-        autocomplete="username" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password"
-        required>
-
-    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-    
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
-        
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
+<body class="b-body-login">
+    <div class="b-conten-form">
+        <div class="b-text-login">
+            <h3 class="b-text-login__txt">Iniciar Sesion</h3>
         </div>
-        #}
-        
-        <button class="btn btn-lg btn-primary" type="submit">
-            Comenzar
-        </button>
-    </form>
-    <a href="{{path ('app_register')}}">Crear Cuenta</a>
+
+        <div class="b-form-login">
+
+
+
+            <form id="login-form" method="post">
+                {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}
+                </div>
+                {% endif %}
+                {% if app.user %}
+                <div class="mb-3">
+                    You are logged in as {{ app.user.name }}, <a href="{{ path('app_logout') }}">Logout</a>
+                </div>
+                {% endif %}
+
+                <div class="b-login">
+                    <label class="b-login__label" for="username">Nombre</label>
+                    <input class="b-login__input" type="text" value="{{ last_username }}" name="username" id="username"
+                        autocomplete="username" required autofocus>
+                </div>
+
+                <div class="b-login">
+                    <label for="inputPassword" class="b-login__label">Contraseña</label>
+                    <input type="password" class="b-login__input" name="password" id="inputPassword"
+                        autocomplete="current-password" required>
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                </div>
+
+
+                <div class="b-remember">
+                    <label for="remember-me" class="b-remember__label">Recuerdame</label>
+                    <input class="b-remember__check" id="remember-me" type="checkbox" name="_remember_me">
+                </div>
+                <div class="b-btn">
+                    <button type="submit" class="b-btn__button">Comenzar</button>
+                </div>
+
+
+                <div class="b-register-link">
+                    <a style="text-decoration:none" class="b-register-link__text" href="{{path ('app_register')}}">Crear
+                        Cuenta</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
 {% endblock %}
