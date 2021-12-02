@@ -19,9 +19,9 @@ class SecurityController extends AbstractController
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        // if ($this->getUser()) {
-        //     return $this->redirectToRoute('target_path');
-        // }
+        if ($this->getUser()) {
+            return $this->redirectToRoute('target_path');
+        }
 
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
@@ -40,13 +40,24 @@ class SecurityController extends AbstractController
     }
 
 
-    public function loginAdmin(UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager){
+    public function loginAdmin(UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager)
+    {
         $admin = new User();
         $admin->setName("admin");
         $admin->setRoles(['ROLE_ADMIN']);
-        $admin->setPassword($userPasswordHasher->hashPassword($admin,"aidcamp10794"));
+        $admin->setPassword($userPasswordHasher->hashPassword($admin, "aidcamp10794"));
 
         $entityManager->persist($admin);
         $entityManager->flush();
+    }
+
+    public function accountInfo(): void
+    {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_REMEMBERED');
+    }
+
+    public function resetPassword(): void
+    {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
     }
 }

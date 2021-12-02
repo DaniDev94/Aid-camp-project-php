@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+<body class="b-body-register">
+    <div class="b-conten-form">
+        <div class="b-text-register">
+            <h1 class="b-text-register__txt">Registrarse</h1>
+        </div>
+        <div class="b-form-register">
+            {{ form_start(registrationForm) }}
+
+            <div class="b-content-all">
+                {{ form_label(registrationForm.name, 'Nombre', { label_attr : {'class': 'b-name-label'}})}}
+                {{ form_row(registrationForm.name, { attr: { class : "b-name-input"}})}}
+            </div>
+
+            <div class="b-content-all">
+                {{ form_label(registrationForm.image, 'Avatar', { label_attr : {'class': 'b-name-label'}})}}
+                {{ form_row(registrationForm.image, { attr: { class : "b-name-input"}})}}
+            </div>
+
+            <div class="b-content-all">
+                {{ form_label(registrationForm.email, 'Email', { label_attr : {'class': 'b-name-label'}})}}
+                {{ form_row(registrationForm.email, { attr: { class : "b-name-input"}})}}
+            </div>
+
+            <div class="b-content-all">
+                {{ form_label(registrationForm.plainPassword, 'Contrseña', { label_attr : {'class': 'b-name-label'}})}}
+                {{ form_row(registrationForm.plainPassword, { attr: { class : "b-name-input"}})}}
+            </div>
+
+
+            <div class="b-remember">
+                {{ form_label(registrationForm.agreeTerms, 'Aceptar terminos y Condiciones', { label_attr : {'class': 'b-remember__label'}})}}
+                {{ form_row(registrationForm.agreeTerms, { attr: { class : "b-remember__check"}})}}
+            </div>
+
+
+            <div class="b-btn">
+                <button type="submit" class="b-btn__button">Registrarse</button>
+            </div>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
+
+</body>
+
+{% endblock %}
