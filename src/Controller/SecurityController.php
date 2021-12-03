@@ -20,7 +20,7 @@ class SecurityController extends AbstractController
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         if ($this->getUser()) {
-            return $this->redirectToRoute('target_path');
+            return $this->redirectToRoute('getPosts');
         }
 
         // get the login error if there is one
@@ -51,13 +51,17 @@ class SecurityController extends AbstractController
         $entityManager->flush();
     }
 
-    public function accountInfo(): void
+    public function accountInfo(): Response
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_REMEMBERED');
+
+        return $this->redirectToRoute('getPosts');
     }
 
-    public function resetPassword(): void
+    public function resetPassword(): Response
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
+        return $this->redirectToRoute('landingPage');
     }
 }

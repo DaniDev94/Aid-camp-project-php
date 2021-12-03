@@ -2,34 +2,58 @@
 
 {% block body %}
 
-<body>
+<body class="b-body-posts">
     <div class="b-menu">
-        <div class="b-nav">
-            <a class="b-nav__link" href="{{path ('newPost')}}">
-                <img src="{{asset('/images/edit.png')}}"
-                <p>Crear Post</p>
-            </a>
+        <div class="b-user">
+            <p class="b-avatar-name">{{app.user.name}}</p>
+            <div class="b-avatar">
+                <img class="b-avatar__img" src={{app.user.image}} alt={{app.user.name}}>
+            </div>
         </div>
-        
-    
-
-
-
-
+        <div class="b-nav">
+            <a style=" text-decoration: none" class="b-nav__link" href="{{path ('newPost')}}">Crear Post</a>
+            <a style=" text-decoration: none" class="b-nav__link" href="{{path ('app_logout')}}">Cerrar sesion</a>
+        </div>
     </div>
-    
-    
-    
-    
-    {# 
-    <a href="{{path ('app_logout')}}">Cerrar sesion</a>
+
+
     {% for post in posts %}
-    <h2>{{post.title|upper}}</h2>
-    <h2>{{post.date|date("Y-m-d H:i:s")}}</h2>
-    {% if is_granted('ROLE_ADMIN') %}
-    <a href="{{ path('deletePosts', {'id': post.id}) }}">Borrar</a>
-    {% endif %}
-    {% endfor %} #}
+    <div class="b-card-post">
+        <div class="b-content-post">
+            <div class="b-head-title">
+                <div>
+                    <h2>{{post.title}}</h2>
+                </div>
+                <div class="b-head-title__user">
+                    <p>{{app.user.name}}</p>
+                    <p>{{post.date|date("Y-m-d H:i:s")}}</p>
+                </div>
+            </div>
+            <div class="b-head-bootcamps">
+                <p class="b-head-bootcamps__txt">{{post.bootcamp}}</p>
+            </div>
+
+            <div class="b-head-intro">
+                <p class="b-head-intro__txt">{{post.introduction}}</p>
+            </div>
+            <div class="b-head-desc">
+                <p class="b-head-desc__txt">{{post.description}}</p>
+            </div>
+
+
+
+            {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('deletePosts', {'id': post.id}) }}">Borrar</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %} D
+
+
+
+
+
+
 
 </body>
 

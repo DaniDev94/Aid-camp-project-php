@@ -345,13 +345,148 @@
 //------------------------>
 
 //Posts-Page-------------->
-.b-menu {
-    overflow: hidden;
-    background-color: #333;
+
+.b-body-posts {
+    background-image: url("../images/posts-page.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
-/* .b-nav{
+.b-menu {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.623);
+    border-bottom-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    border-bottom: 3.5px solid var(--color-pink);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6rem;
+}
 
-} */
+.b-user {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-left: 4rem;
+    margin-top: 2rem;
+}
+
+.b-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 6rem;
+    overflow: hidden;
+    &__img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.b-avatar-name {
+    font-family: "Kanit-light";
+    font-size: 2.6rem;
+    color: var(--color-white);
+    text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.424);
+}
+
+.b-nav {
+    border-bottom: 4px solid var(--color-pink);
+    border-top-left-radius: 1.5rem;
+    padding-left: 2rem;
+    &__link {
+        margin-right: 3.5rem;
+        font-family: "Kanit-light";
+        font-size: 3.2rem;
+        color: var(--color-white);
+        text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.424);
+        &:hover {
+            color: var(--color-pink);
+        }
+    }
+}
+
+.b-card-post {
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 3rem 6rem 3rem;
+    border: 5px solid var(--color-dark);
+    border-radius: 2rem;
+    background-color: var(--color-white);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset;
+}
+
+.b-content-post {
+    padding: 1rem 3rem;
+}
+
+.b-head-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px dashed var(--color-pink);
+    margin-top: 0.9rem;
+    & h2 {
+        font-family: "Kanit-medium";
+        font-size: 2.1rem;
+        color: var(--color-dark);
+    }
+
+    &__user {
+        display: flex;
+        & p {
+            font-family: "Kanit-medium";
+            font-size: 1.3rem;
+            margin-left: 1rem;
+            color: rgba(0, 0, 0, 0.555);
+        }
+    }
+}
+
+.b-head-bootcamps {
+    align-items: center;
+    border-bottom: 4px dashed var(--color-pink);
+
+    &__txt {
+        margin: 0;
+        font-family: "Kanit-bold";
+        font-size: 2.34rem;
+        text-align: center;
+        color: var(--color-dark);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.589);
+        letter-spacing: 0.1rem;
+    }
+}
+
+.b-head-intro {
+    align-items: center;
+    border-bottom: 4px dashed var(--color-pink);
+    &__txt {
+        margin: 0;
+        font-family: "Kanit-light";
+        font-size: 1.98rem;
+        text-align: center;
+        color:var(--color-pink);
+    }
+}
+
+.b-head-desc{
+    margin: 1.5rem 0;
+
+    &__txt{
+        margin: 0;
+        font-family: "Kanit-medium";
+        font-size: 1.68rem;
+
+    }
+
+}
 
 //------------------------>
