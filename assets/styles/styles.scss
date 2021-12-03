@@ -558,4 +558,30 @@
     }
 }
 
+.b-btn-deleted {
+    text-align: center;
+    &__text {
+        font-family: "Kanit-bold";
+        font-size: 2.5rem;
+        background-color: var(--color-white);
+        padding: 0 4rem;
+        border: 7px solid var(--color-dark);
+        border-radius: 3rem;
+        color: var(--color-dark);
+        &:hover {
+            border-color: var(--color-white);
+            background-color: var(--color-dark);
+            color: var(--color-white);
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.294);
+        }
+        &:focus {
+            color: var(--color-white);
+        }
+        &:active {
+            border-color: var(--color-pink);
+            color: var(--color-pink);
+        }
+    }
+}
+
 //------------------------>

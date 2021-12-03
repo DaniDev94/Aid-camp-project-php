@@ -15,9 +15,13 @@
             <a style=" text-decoration: none" class="b-nav__link" href="{{path ('app_logout')}}">Cerrar sesion</a>
         </div>
     </div>
-
-
     {% for post in posts %}
+    <div class="b-btn-deleted">
+        {% if is_granted('ROLE_ADMIN') %}
+        <a style="text-decoration:none" class="b-btn-deleted__text"
+            href="{{ path('deletePosts', {'id': post.id}) }}">Borrar</a>
+        {% endif %}
+    </div>
     <div class="b-card-post">
         <div class="b-content-post">
             <div class="b-head-title">
@@ -39,22 +43,9 @@
             <div class="b-head-desc">
                 <p class="b-head-desc__txt">{{post.description}}</p>
             </div>
-
-
-
-            {% if is_granted('ROLE_ADMIN') %}
-            <a href="{{ path('deletePosts', {'id': post.id}) }}">Borrar</a>
-            {% endif %}
         </div>
     </div>
-    {% endfor %} D
-
-
-
-
-
-
-
+    {% endfor %}
 </body>
 
 
