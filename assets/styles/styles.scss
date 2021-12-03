@@ -295,13 +295,12 @@
 //------------------------>
 
 //Register-Page-------------->
-.b-body-register{
+.b-body-register {
     background-image: url("../images/register.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
-
 }
 .b-text-register {
     margin: 2rem 0;
@@ -342,5 +341,17 @@
     text-shadow: 1px 1px 10px rgba(3, 3, 3, 0.424);
     margin-bottom: 1rem;
 }
+
+//------------------------>
+
+//Posts-Page-------------->
+.b-menu {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* .b-nav{
+
+} */
 
 //------------------------>

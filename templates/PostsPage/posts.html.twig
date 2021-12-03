@@ -1,17 +1,37 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-<h1>Posts Page</h1>
-<a href="{{path ('newPost')}}">Crear Post</a>
-<a href="{{path ('app_logout')}}">Cerrar sesion</a>
 
-{% for post in posts %}
-<h2>{{post.title|upper}}</h2>
-<h2>{{post.date|date("Y-m-d H:i:s")}}</h2>
-{% if is_granted('ROLE_ADMIN') %}
-<a href="{{ path('deletePosts', {'id': post.id}) }}">Borrar</a>
-{% endif %}
+<body>
+    <div class="b-menu">
+        <div class="b-nav">
+            <a class="b-nav__link" href="{{path ('newPost')}}">
+                <img src="{{asset('/images/edit.png')}}"
+                <p>Crear Post</p>
+            </a>
+        </div>
+        
+    
 
-{% endfor %}
+
+
+
+    </div>
+    
+    
+    
+    
+    {# 
+    <a href="{{path ('app_logout')}}">Cerrar sesion</a>
+    {% for post in posts %}
+    <h2>{{post.title|upper}}</h2>
+    <h2>{{post.date|date("Y-m-d H:i:s")}}</h2>
+    {% if is_granted('ROLE_ADMIN') %}
+    <a href="{{ path('deletePosts', {'id': post.id}) }}">Borrar</a>
+    {% endif %}
+    {% endfor %} #}
+
+</body>
+
 
 {% endblock %}
